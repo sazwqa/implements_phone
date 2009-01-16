@@ -1,0 +1,27 @@
+=== Implements Phone
+
+Helpers to assist in adding phone numbers to models.
+
+Add the following in your model
+
+  implements_phone :validate => [:phone], :invalidate => [:additional_phone]
+  
+Options:
+
+validate:     Enforces validates_presence_of on the field(s)
+invalidates:  Doesn't enforces validates_presence_of on the field(s)
+
+All the fields are still validated according the following regex:
+
+/^([0-9]){3}\-([0-9]){3}\-([0-9]){4}([\-]){0,1}([0-9]){0,4}$/
+
+When you write implements_phone in your model, you get the following methods:
+
+phone_apart
+phone_apart=
+formatted_phone
+
+phone_apart accessor is used to get/set values for the phone field.
+formatted_phone gives phone formatted for use in views, like:
+
+321-321-3213 Ext. 3213
