@@ -1,5 +1,5 @@
 module ImplementsPhoneHelper
-  def phone (object, field)
+  def phone_field (object, field)
     string = "(" + content_tag(:input, nil, gen_hash(object, field, 0, 3)) + ")"
     string += content_tag(:input, nil, gen_hash(object, field, 1, 3)) + "-"
     string += content_tag(:input, nil, gen_hash(object, field, 2, 4))

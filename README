@@ -2,6 +2,8 @@
 
 Helpers to assist in adding phone numbers to models.
 
+=== Using in model
+
 Add the following in your model
 
   implements_phone :validate => [:phone], :invalidate => [:additional_phone]
@@ -25,3 +27,12 @@ phone_apart accessor is used to get/set values for the phone field.
 formatted_phone gives phone formatted for use in views, like:
 
 321-321-3213 Ext. 3213
+
+=== Using in view
+
+You get a helper +phone_field+ for use in view. Use it as follows:
+
+<%= phone_field(@user, :phone_field) %>
+
+Here as evident the first parameter is the object of the model on which implements_phone is used 
+and second paramter is the name of the phone field.
