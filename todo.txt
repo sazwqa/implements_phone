@@ -1,0 +1,3 @@
+[x] add options for messages, regex
+[x] inject fieldwithErrors
+[o] less noise in parameter passing

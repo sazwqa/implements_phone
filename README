@@ -1,23 +1,23 @@
 === Implements Phone
 
-Helpers to assist in adding phone numbers to models.
+Implements Phone provides helpers at model and view level to add phone numbers with ease.
 
 === Using in model
 
 Add the following in your model
 
-  implements_phone :validate => [:phone], :invalidate => [:additional_phone]
-  
+implements_phone
+    
 Options:
 
-validate:     Enforces validates_presence_of on the field(s)
-invalidates:  Doesn't enforces validates_presence_of on the field(s)
+fields              Tell the fields that should be used for storing phone (better be string).
+validate_presence   Tell the fields on which you want to apply validates_presence_of. (default is none)
+format_message      Message to be displayed if phone number is in improper format. (default is 'is in improper format.')
+presence_message    Message to be displayed if phone number is empty. (default is 'is blank.')
+format_regex        Regex against with phone numbers shall be evaluated. (default is /^([0-9]){3}\-([0-9]){3}\-([0-9]){4}([\-]){0,1}([0-9]){0,4}$/)
 
-All the fields are still validated according the following regex:
-
-/^([0-9]){3}\-([0-9]){3}\-([0-9]){4}([\-]){0,1}([0-9]){0,4}$/
-
-When you write implements_phone in your model, you get the following methods:
+When you write implements_phone in your model (for a field phone), 
+you get the following methods:
 
 phone_apart
 phone_apart=
@@ -36,3 +36,5 @@ You get a helper +phone_field+ for use in view. Use it as follows:
 
 Here as evident the first parameter is the object of the model on which implements_phone is used 
 and second paramter is the name of the phone field.
+
+fieldWithErrors is added to phone fields if they contain any errors, you will need to style them accordingly.
