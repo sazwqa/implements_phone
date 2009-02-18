@@ -10,10 +10,7 @@ module ImplementsPhone
   # format_regex = regex for checking the phone format
   module ClassMethods
     def implements_phone(options = {})
-      if options[:fields].blank?
-        puts "ImplementsPhone configuration error, fields not specified."
-        return
-      end
+      (puts('ImplementsPhone configuration error, fields not specified.'); return) if options[:fields].blank?
       # options
       fields            = options[:fields]
       validate_presence = options[:validate_presence] || []

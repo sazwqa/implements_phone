@@ -22,7 +22,7 @@ module ImplementsPhoneHelper
       :type => :text, 
       :class => "#{underscore}_#{field}", 
       :name => "#{downcase}[#{field}_apart][#{count}]", 
-      :id => "#{underscore}_#{field}_#{count}", 
+      :id => count.zero? ? "#{underscore}_#{field}" : "#{underscore}_#{field}_#{count}", 
       :size => size, 
       :maxlength => size, 
       :onkeyup => "if (this.value.length == #{size}) { document.getElementById('#{underscore}_#{field}_#{count+1}').focus(); };",
