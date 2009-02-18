@@ -38,3 +38,6 @@ Here as evident the first parameter is the object of the model on which implemen
 and second paramter is the name of the phone field.
 
 fieldWithErrors is added to phone fields if they contain any errors, you will need to style them accordingly.
+
+=== Bugs or Feedback ?
+http://implements-phone.lighthouseapp.com/
